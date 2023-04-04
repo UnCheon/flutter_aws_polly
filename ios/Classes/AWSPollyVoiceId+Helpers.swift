@@ -41,7 +41,6 @@ extension AWSPollyVoiceId {
             case "hala": return .hala
             case "hannah": return .hannah
             case "hans": return .hans
-            case "hans": return .hans
             case "hiujin": return .hiujin
             case "ida": return .ida
             case "ines": return .ines
