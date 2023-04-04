@@ -57,7 +57,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
 
       // Choose the voice ID
       input.voiceId = AWSPollyVoiceId.voiceIdForString(voiceIdString: voiceId)
-
+      input.engine = AWSPollyEngine.neural 
       // Create an task to synthesize speech using the given synthesis input
       let builder = AWSPollySynthesizeSpeechURLBuilder.default().getPreSignedURL(input)
 
