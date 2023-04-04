@@ -41,6 +41,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
       let request = call.arguments as! [String: String]
       let text = request["input"]!
       let voiceId = request["voiceId"]!
+      let engine = request["engine"]!
 
       // First, Amazon Polly requires an input, which we need to prepare.
       // Again, we ignore the errors, however this should be handled in
@@ -57,7 +58,10 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
 
       // Choose the voice ID
       input.voiceId = AWSPollyVoiceId.voiceIdForString(voiceIdString: voiceId)
-      input.engine = AWSPollyEngine.neural 
+      if (engine == "neural") {
+        input.engine = AWSPollyEngine.neural 
+      }
+
       // Create an task to synthesize speech using the given synthesis input
       let builder = AWSPollySynthesizeSpeechURLBuilder.default().getPreSignedURL(input)
 
