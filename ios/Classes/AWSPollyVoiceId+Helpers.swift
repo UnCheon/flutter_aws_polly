@@ -29,7 +29,6 @@ extension AWSPollyVoiceId {
             case "cristiano": return .cristiano
             case "daniel": return .daniel
             case "dora": return .dora
-            case "elan": return .elan
             case "elin": return .elin
             case "emma": return .emma
             case "enrique": return .enrique
@@ -74,7 +73,6 @@ extension AWSPollyVoiceId {
             case "mia": return .mia
             case "miguel": return .miguel
             case "mizuki": return .mizuki
-            case "montserrat": return .montserrat
             case "naja": return .naja
             case "nicole": return .nicole
             case "ola": return .ola
