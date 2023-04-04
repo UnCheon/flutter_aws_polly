@@ -60,6 +60,8 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
       input.voiceId = AWSPollyVoiceId.voiceIdForString(voiceIdString: voiceId)
       if (engine == "neural") {
         input.engine = AWSPollyEngine.neural 
+      }else{
+        input.engine = AWSPollyEngine.standard       
       }
 
       // Create an task to synthesize speech using the given synthesis input
