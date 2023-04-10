@@ -42,6 +42,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
       let text = request["input"]!
       let voiceId = request["voiceId"]!
       let engine = request["engine"]!
+      let sppechRate = request["speechRate"] ?? 100 
 
       // First, Amazon Polly requires an input, which we need to prepare.
       // Again, we ignore the errors, however this should be handled in
@@ -63,6 +64,8 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
       }else{
         input.engine = AWSPollyEngine.standard       
       }
+      
+      input.speechRate = AWSPollySpeechRate(rawValue: sppechRate)
 
       // Create an task to synthesize speech using the given synthesis input
       let builder = AWSPollySynthesizeSpeechURLBuilder.default().getPreSignedURL(input)
