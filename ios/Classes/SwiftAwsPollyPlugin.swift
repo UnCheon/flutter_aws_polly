@@ -8,7 +8,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
     static let initialize = "initialize"
     static let getUrl = "getUrl"
   }
-
+  
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "aws_polly", binaryMessenger: registrar.messenger())
     let instance = SwiftAwsPollyPlugin()
@@ -77,7 +77,9 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
         let url = awsTask.result!
 
         // Try playing the data using the system AVAudioPlayer
-        result(url.absoluteString)
+//         result(url.absoluteString)
+        result(["url": url.absoluteString, "version": "1"])
+
         return nil
       })
     default:
