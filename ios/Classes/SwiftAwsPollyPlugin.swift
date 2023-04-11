@@ -54,7 +54,6 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
       input.text = text
       input.textType = AWSPollyTextType.ssml
       print("??????")
-      input.rate = 0.5
 
       // We expect the output in MP3 format
       input.outputFormat = AWSPollyOutputFormat.mp3
