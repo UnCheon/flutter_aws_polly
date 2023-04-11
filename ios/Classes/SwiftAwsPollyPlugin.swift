@@ -52,7 +52,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
 
       // Text to synthesize
       input.text = text
-      input.speechMarkTypes = [.sentence, .ssml, .viseme, .word]
+      input.textType = .ssml
 
 
       // We expect the output in MP3 format
