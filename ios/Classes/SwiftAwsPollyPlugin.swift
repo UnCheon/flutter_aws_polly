@@ -52,6 +52,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
 
       // Text to synthesize
       input.text = text
+      input.textType = "ssml"
 
       // We expect the output in MP3 format
       input.outputFormat = AWSPollyOutputFormat.mp3
