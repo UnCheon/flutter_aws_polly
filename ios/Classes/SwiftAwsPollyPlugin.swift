@@ -77,7 +77,7 @@ public class SwiftAwsPollyPlugin: NSObject, FlutterPlugin {
 
         // Try playing the data using the system AVAudioPlayer
 //         result(url.absoluteString)
-        result(["url": url.absoluteString, "version": "1"])
+        result(url.absoluteString)
 
         return nil
       })
