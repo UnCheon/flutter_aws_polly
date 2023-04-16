@@ -67,7 +67,7 @@ class AwsPollyPlugin: FlutterPlugin, MethodCallHandler {
                 val voiceId = arguments["voiceId"] as String
                 val enginString = arguments["engin"] as String
                 
-                val engine = Engine.Neural
+                var engine = Engine.Neural
                 if (enginString.equals("standard", true)) {
                     engine = Engine.Standard
                 }
