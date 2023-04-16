@@ -6,6 +6,7 @@ import com.amazonaws.auth.CognitoCachingCredentialsProvider
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.polly.AmazonPollyPresigningClient
 import com.amazonaws.services.polly.model.*
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -64,6 +65,13 @@ class AwsPollyPlugin: FlutterPlugin, MethodCallHandler {
                 val arguments = call.arguments as Map<String, String>
                 val input = arguments["input"] as String
                 val voiceId = arguments["voiceId"] as String
+                var enginString = arguments["engin"] as String
+                
+                val engine = Engine.Neural
+                if (enginString.equals("neural")) {
+                    engine = Engine.Standard
+                }
+                
 
                 val capitalizedVoice = voiceId.replaceFirstChar {
                     if (it.isLowerCase()) it.titlecase(
@@ -77,6 +85,8 @@ class AwsPollyPlugin: FlutterPlugin, MethodCallHandler {
                 val synthesizeSpeechPresignRequest = SynthesizeSpeechPresignRequest()
                     .withText(input)
                     .withVoiceId(awsVoice)
+                    .withEngin(engine)
+                    .withTextType("ssml")
                     .withOutputFormat(OutputFormat.Mp3)
 
                 ioScope.launch {
