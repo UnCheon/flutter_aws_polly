@@ -48,7 +48,7 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    def aws_version = "2.18.+"
+    def aws_version = "2.64.+"
     implementation "com.amazonaws:aws-android-sdk-polly:$aws_version"
     implementation "com.amazonaws:aws-android-sdk-mobile-client:$aws_version"
 }
