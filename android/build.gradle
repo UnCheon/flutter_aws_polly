@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    if (project.android.hasProperty('namespaces')) {
+    if (project.android.hasProperty('namespace')) {
         namespace 'io.robrichardson.aws_polly'
     }
 
