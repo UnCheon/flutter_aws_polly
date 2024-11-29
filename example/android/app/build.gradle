@@ -26,6 +26,10 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    if (project.android.hasProperty('namespaces')) {
+        namespace 'io.robrichardson.aws_polly_example'
+    }
+
     compileSdkVersion flutter.compileSdkVersion
 
     compileOptions {
