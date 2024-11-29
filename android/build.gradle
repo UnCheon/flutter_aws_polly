@@ -25,9 +25,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    if (project.android.hasProperty('namespace')) {
-        namespace 'io.robrichardson.aws_polly'
-    }
+
+    // if (project.android.hasProperty("namespace")) {
+    namespace 'io.robrichardson.aws_polly'
+    // }
 
     compileSdkVersion 31
 
